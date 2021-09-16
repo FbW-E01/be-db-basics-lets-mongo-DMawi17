@@ -35,16 +35,17 @@ Add your answers directly into this README file.
 
 ```sql
   > function factorial (n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);
-    }
-  > factorial(5);
+    ... if (n <= 1) return 1
+    ... return n * factorial(n - 1)
+    ... }
+    [Function: factorial]
+  > factorial(5)
   120
 ```
 
 ```sql
   > new Date("20109/1/1")
-ISODate("+020108-12-31T23:00:00.000Z")
+  ISODate("+020108-12-31T23:00:00.000Z")
 ```
 
 ```sql
@@ -62,29 +63,29 @@ ISODate("+020108-12-31T23:00:00.000Z")
 7. (Research) How can you insert multiple documents at the same time?
 
 ```sql
-db.movies.insertMany([
-  {
-    title: 'Docteur?',
-    Director: 'Tristan Séguéla',
-    genre: 'Comedy',
-  },
-  {
-    title: 'Moonbound',
-    Director: 'Ali Samadi Ahadi',
-    genre: 'Animation',
-  },
-  {
-    title: 'Hunters',
-    Director: 'Justin Lee',
-    genre: 'Action',
-  }
-])
+> db.movies.insertMany([
+...   {
+.....     title: 'Docteur?',
+.....     Director: 'Tristan Séguéla',
+.....     genre: 'Comedy',
+.....   },
+...   {
+.....     title: 'Moonbound',
+.....     Director: 'Ali Samadi Ahadi',
+.....     genre: 'Animation',
+.....   },
+...   {
+.....     title: 'Hunters',
+.....     Director: 'Justin Lee',
+.....     genre: 'Action',
+.....   }
+... ])
 ```
 
 8. (Research) You have a collection called `cats` with a documents like this: `{ name: "Veera" }, { name: "Rauli" }, { name: "BenBen" }` - How can you insert the field `cute: true` into all of them with one command?
 
 ```sql
-  db.cats.updateMany({}, {$set : {"cute" : true}})
+  > db.cats.updateMany({}, {$set : {"cute" : true}})
 ```
 
 9. (Task) Start a timer for 30 minutes. Spend all that time getting to know and reading https://docs.mongodb.com/manual/introduction/ - how far did you get? What was the most cool or interesting thing you learned?
@@ -94,6 +95,7 @@ db.movies.insertMany([
 ```sql
   > help # 'Database-level' help
   > db.movies.updateOne # prints the JS source code for the fn.
+  # notice updateOne is without parenthesis.
 ```
 
 ```zsh
